@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>こーゆ 投稿ツール</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+
+<h1>こーゆ 投稿ツール</h1>
+<p class="lead">YouTube チャンネル「こーゆ」(栄養・健康の解説ショート動画)の運営者が、自分のチャンネルの投稿・公開予約・分析を自動化するために使う個人用ツールです。</p>
+
+<h2>このツールでできること</h2>
+<ul>
+<li>運営者が制作し、品質確認を終えた動画を、YouTube チャンネル「こーゆ」へ<strong>非公開</strong>でアップロードする</li>
+<li>アップロードした動画に、公開予約日時(1日1本)を設定する</li>
+<li>自分の動画の公開状態・予約日時・再生回数・高評価数・コメント数を確認する</li>
+<li>YouTube アナリティクスの集計データ(視聴回数・視聴時間・視聴維持率など)を取得し、動画の改善に使う</li>
+<li>公開されている同じジャンルの動画を検索し、題材や構成の傾向を調べる(市場調査)</li>
+</ul>
+
+<h2>利用者</h2>
+<p>このツールは運営者本人が、自分の管理するチャンネルにだけ使います。一般の方への提供・ログイン画面の公開は行っていません。運営者以外のアカウントのデータにはアクセスしません。</p>
+
+<h2>Google のユーザーデータを求める理由</h2>
+<p>このツールは YouTube API サービス(YouTube Data API v3・YouTube Analytics API)を使います。Google の OAuth 2.0 で、次の権限を求めます。メールアドレスやプロフィールなど、Google アカウントの個人情報を得る権限は求めません。</p>
+<table>
+<thead><tr><th>権限(スコープ)</th><th>使う目的</th></tr></thead>
+<tbody>
+<tr><td><code>https://www.googleapis.com/auth/youtube.upload</code></td><td>自分のチャンネルへ動画を「非公開」でアップロードし、サムネイルを設定するため</td></tr>
+<tr><td><code>https://www.googleapis.com/auth/youtube</code></td><td>アップロード済みの自分の動画に公開予約日時を設定するため(公開予約以外の設定変更・削除は行いません)</td></tr>
+<tr><td><code>https://www.googleapis.com/auth/youtube.readonly</code></td><td>認証したチャンネルが本人のチャンネルであることの確認、自分の動画の公開状態・予約日時・再生回数などの確認、公開されている動画の検索(市場調査)のため</td></tr>
+<tr><td><code>https://www.googleapis.com/auth/yt-analytics.readonly</code></td><td>自分のチャンネルの視聴データ(集計値)を分析し、動画の改善に役立てるため</td></tr>
+</tbody>
+</table>
+
+<h2>関連するポリシー</h2>
+<ul>
+<li><a href="privacy.html">プライバシーポリシー(こーゆ 投稿ツール)</a></li>
+<li>このツールを使うことで、<a href="https://www.youtube.com/t/terms">YouTube 利用規約</a>に同意したものとみなされます。</li>
+<li><a href="https://policies.google.com/privacy">Google プライバシーポリシー</a></li>
+</ul>
+<p><a href="../">← アプリの一覧</a></p>
+
+<footer>
+<p>運営者: {{運営者の表示名}} / 連絡先: <a href="mailto:{{連絡先メールアドレス}}">{{連絡先メールアドレス}}</a></p>
+<p>最終更新: 2026年10月29日</p>
+</footer>
+</main>
+</body>
+</html>
